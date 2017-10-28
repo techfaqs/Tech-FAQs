@@ -23,6 +23,18 @@ This project and everyone participating in it is governed by the [Code of Conduc
 
 ## How Can I Contribute?
 
+> ## For Beginners:
+>
+> Instructions-
+>
+> 1. Fork this Repository (using the button at the top-right side)
+> 2. Clone your forked repository to your desktop/laptop (i.e. `git clone <git-repo-https_or_ssh-link>`)
+> 3. Create a new branch for your modifications (i.e. `git branch new-branch-name` and check it out `git checkout new-branch-name`)
+> 4. Add your files (git add -A), commit (git commit -m "my first commit") and push (git push origin new-user)
+> 5. Create a pull request (*You have raised your first PR!*)
+> 6. Star this repository (optional)
+
+
 Please send a [GitHub Pull Request](https://github.com/animenon/Tech-FAQs/pull/new/master) with a clear list of what you've done (read more about [pull requests](http://help.github.com/pull-requests/)). Please make sure all of your commits are atomic (one feature per commit).
 
 Always write a clear log message for your commits and add the number of the Issue (if your commit is for an Issue). One-line messages are fine for small changes, but bigger changes should look like this:
