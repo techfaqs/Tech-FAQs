@@ -28,4 +28,7 @@ CommitId is the leading characters of the changeset ID, up to 10, but must be un
 Push all tags to remote repository: | git push --tags origin
 Undo local changes | If you mess up, you can replace the changes in your working tree with the last content in head:Changes already added to the index, as well as new files, will be kept. | git checkout -- <filename>
 Instead, to drop all your  local changes and commits, fetch the latest history from the server and  point your local master branch at it, do this: | git fetch origin  git reset --hard origin/master
+  
+ Still twisted?
+ check out : https://www.atlassian.com/git/tutorials/what-is-version-control
 
