@@ -1,4 +1,4 @@
-## GIT CheatSheet
+## GIT Commands
 
 
 1. Create a new repo:
