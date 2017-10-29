@@ -16,6 +16,9 @@ and [How to Contribute to Tech-FAQs](https://github.com/animenon/Tech-FAQs/blob/
 
 ### Feel free to add more interesting tech topics!
 
+If you feel anything is to be changed or added to our repo, [do raise an issue](https://github.com/animenon/Tech-FAQs/issues).
+#### If you find this repo interesting do **star** it.
+
 ------
 [LICENSE](https://github.com/animenon/Tech-FAQs/blob/master/LICENSE)
 
