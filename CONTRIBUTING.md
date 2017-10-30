@@ -38,7 +38,7 @@ This project and everyone participating in it is governed by the [Code of Conduc
 
 Please send a [GitHub Pull Request](https://github.com/animenon/Tech-FAQs/pull/new/master) with a clear list of what you've done (read more about [pull requests](http://help.github.com/pull-requests/)). Please make sure all of your commits are atomic (one feature per commit).
 
-Always write a clear log message for your commits and add the number of the Issue (if your commit is for an Issue). One-line messages are fine for small changes, but bigger changes should look like this:
+Always write a clear log message for your commits and add the Issue Number (if your commit is for an Issue). One-line messages are fine for small changes, but bigger changes should look like this:
 
     $ git commit -m "A brief summary of the commit
     > 
@@ -46,18 +46,19 @@ Always write a clear log message for your commits and add the number of the Issu
 
 ### Want to add a new Tech-FAQ?
 
-* Create a new folder for your technologie
-* Use [Markdown](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)-files to add the information you think is relevant (eg commands, usefull hints...)
+* Create a new folder for your technology
+* Use [Markdown](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/) files to add the information you think is relevant (eg commands, usefull hints...)
   * maybe structure the information in different, meaningful files
 
 ### Want to contribute to an already existing Tech-FAQ?
 
-* Create a new file or extend an existing one in the regarding technologie-folder
-* Use [Markdown](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)  to add the information you think is relevant (eg commands, usefull hints...)
+* Create a new file or extend an existing one in the regarding technology-folder
+* Use [Markdown](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)  to add the information you think is relevant (eg commands, useful hints...)
 
-### Want to add usefull link you found for a technologie (eg Cheatsheets ...)
+### Want to add useful link you found for a technology (eg Cheatsheets, commands ..)
 
-* Add our link in the regarding file in the [tech-docs](tech-docs) folder
+* Add documentation related to a topic by creating a file of the format <technology>.md in [tech-docs](tech-docs).
+* Add reference links in the regarding file in the [tech-docs](tech-docs) folder
 
 ## Styleguides
 
