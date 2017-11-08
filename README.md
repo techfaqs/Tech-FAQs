@@ -12,7 +12,6 @@ and [How to Contribute to Tech-FAQs](https://github.com/animenon/Tech-FAQs/blob/
 
 * [git](https://github.com/animenon/Tech-FAQs/tree/master/git)
 * [hadoop](https://github.com/animenon/Tech-FAQs/tree/master/hadoop)
-* [tech-docs](https://github.com/animenon/Tech-FAQs/tree/master/tech-docs)
 
 ### Feel free to add more interesting tech topics!
 
