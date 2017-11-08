@@ -3,13 +3,29 @@
 Programming paradigms are a way to classify programming languages based on their features.
 
 Various Programming paradigms as per [Wiki](https://en.wikipedia.org/wiki/Comparison_of_programming_paradigms):
-- Imperative programming – defines computation as statements that change a program state. (i.e. which allows side effects)
-- Procedural programming, structured programming – specifies the steps a program must take to reach a desired state. (i.e. which groups code into functions)
-- Declarative programming – defines program logic, but not detailed control flow. (i.e. which does not state the order in which operations execut)
-- Functional programming – treats programs as evaluating mathematical functions and avoids state and mutable data (i.e. which disallows side effects)
-- Object-oriented programming (OOP) – organizes programs as objects: data structures consisting of datafields and methods together with their interactions. (i.e. which groups code together with the state the code modifies)
-- Event-driven programming – program control flow is determined by events, such as sensor inputs or user actions (mouse clicks, key presses) or messages from other programs or threads.
-- Automata-based programming – a program, or part, is treated as a model of a finite state machine or any other formal automaton.
+- **Imperative programming** – defines computation as statements that change a 
+   program state. (i.e. which allows side effects)
+- **Procedural programming, structured programming** – specifies the steps a
+   program must take to reach a desired state.
+   (i.e. which groups code into functions)
+- **Declarative programming** – defines program logic, but not detailed control
+   flow.
+   (i.e. which does not state the order in which operations execut)
+- **Functional programming** – treats programs as evaluating mathematical
+   functions and avoids state and mutable data.
+   (i.e. which disallows side effects)
+- **Object-oriented programming (OOP)** – organizes programs as objects: data
+   structures consisting of datafields and methods together with their
+   interactions.
+   (i.e. which groups code together with the state the code modifies)
+- **Event-driven programming** – program control flow is determined by events,
+   such as sensor inputs or user actions (mouse clicks, key presses) or messages
+   from other programs or threads.
+- **Automata-based programming** – a program, or part, is treated as a model of
+   a finite state machine or any other formal automaton.
+
+
+-----
 
 ## Comparision
 
@@ -23,3 +39,5 @@ Various Programming paradigms as per [Wiki](https://en.wikipedia.org/wiki/Compar
 | [Object-oriented](/wiki/Object-oriented_programming "Object-oriented programming") | Treats [datafields](/wiki/Field_(computer_science) "Field (computer science)") as _objects_ manipulated through predefined [methods](/wiki/Method_(computer_science) "Method (computer science)") only | [Objects](/wiki/Object_(computer_science) "Object (computer science)"), methods, [message passing](/wiki/Message_passing "Message passing"), [information hiding](/wiki/Information_hiding "Information hiding"), [data abstraction](/wiki/Data_abstraction "Data abstraction"), [encapsulation](/wiki/Encapsulation_(computer_programming) "Encapsulation (computer programming)"), [polymorphism](/wiki/Polymorphism_(computer_science) "Polymorphism (computer science)"), [inheritance](/wiki/Inheritance_(computer_science) "Inheritance (computer science)"), [serialization](/wiki/Serialization "Serialization")-marshalling | Procedural | [Here](/wiki/Object-oriented_programming#Criticism "Object-oriented programming") and<sup id="cite_ref-flaws_3-0" class="reference">[[3]](#cite_note-flaws-3)</sup><sup id="cite_ref-executioniKoN_4-0" class="reference">[[4]](#cite_note-executioniKoN-4)</sup><sup id="cite_ref-5" class="reference">[[5]](#cite_note-5)</sup> | [Common Lisp](/wiki/Common_Lisp "Common Lisp"), [C++](/wiki/C%2B%2B "C++"), [C#](/wiki/C_sharp_(programming_language) "C sharp (programming language)"), [Eiffel](/wiki/Eiffel_(programming_language) "Eiffel (programming language)"), [Java](/wiki/Java_(programming_language) "Java (programming language)"), [PHP](/wiki/PHP "PHP"), [Python](/wiki/Python_(programming_language) "Python (programming language)"), [Ruby](/wiki/Ruby_(programming_language) "Ruby (programming language)"), [Scala](/wiki/Scala_(programming_language) "Scala (programming language)") |
 | [Declarative](/wiki/Declarative_programming "Declarative programming") | Defines program logic, but not detailed [control flow](/wiki/Control_flow "Control flow") | [Fourth-generation languages](/wiki/Fourth-generation_programming_language "Fourth-generation programming language"), [spreadsheets](/wiki/Spreadsheet "Spreadsheet"), [report program generators](/wiki/Report_program_generator "Report program generator") | [SQL](/wiki/SQL "SQL"), [regular expressions](/wiki/Regular_expression "Regular expression"), [CSS](/wiki/Cascading_Style_Sheets "Cascading Style Sheets"), [Prolog](/wiki/Prolog "Prolog"), [OWL](/wiki/Web_Ontology_Language "Web Ontology Language"), [SPARQL](/wiki/SPARQL "SPARQL") |
 | [Automata-based programming](/wiki/Automata-based_programming "Automata-based programming") | Treats programs as a model of a [finite state machine](/wiki/Finite_state_machine "Finite state machine") or any other formal automata | State [enumeration](/wiki/Enumeration "Enumeration"), [control variable](/wiki/Control_variable_(programming) "Control variable (programming)"), [state](/wiki/State_(computer_science) "State (computer science)") changes, [isomorphism](/wiki/Isomorphism "Isomorphism"), [state transition table](/wiki/State_transition_table "State transition table") | Imperative, event-driven | [Abstract State Machine Language](/wiki/Abstract_State_Machine_Language "Abstract State Machine Language") |
+
+Source of Comparision: Wiki
