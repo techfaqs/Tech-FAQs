@@ -1,4 +1,4 @@
-Hadoop
+Hadoop <img src="../hadoop/elephant_rgb.jpg" width="35" />
 =======
 
 **Hadoop** is a framework that allows for the distributed processing of large data
