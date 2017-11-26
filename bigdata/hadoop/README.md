@@ -1,7 +1,7 @@
-HADOOP - README
-=======
+HADOOP <img src="../hadoop/elephant_rgb.jpg" width="35" /> README
+==========================
 
-- [HADOOP :elephant:](../hadoop/hadoop.md)
+- [HADOOP <img src="../hadoop/elephant_rgb.jpg" width="35" /> ](../hadoop/hadoop.md)
 - [Hadoop YARN](../hadoop/yarn.md)
 - [Hadoop Distributed File System](../hadoop/HDFS.md)
 
