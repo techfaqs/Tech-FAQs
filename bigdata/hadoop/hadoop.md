@@ -71,6 +71,13 @@ The per-application ApplicationMaster is, in effect, a framework specific
  
  
  
+---
+
+*MapReduce in hadoop-2.x maintains API compatibility with
+previous stable release (hadoop-1.x).
+This means that all MapReduce jobs should still run unchanged
+on top of YARN with just a recompile.*
+
 
 ---
 
