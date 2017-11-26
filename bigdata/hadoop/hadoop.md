@@ -77,11 +77,3 @@ The per-application ApplicationMaster is, in effect, a framework specific
 previous stable release (hadoop-1.x).
 This means that all MapReduce jobs should still run unchanged
 on top of YARN with just a recompile.*
-
-
----
-
-### References:
-1. [Apache™ Hadoop®](http://hadoop.apache.org/)
-2. [Hadoop v1 Commands](https://github.com/animenon/Tech-FAQs/blob/master/bigdata/hadoop/hdfs_v1_commands.md)
-3. [Hadoop v2 Commands](https://github.com/animenon/Tech-FAQs/blob/master/bigdata/hadoop/hdfs_v2_commands.md)
