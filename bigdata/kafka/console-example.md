@@ -33,10 +33,12 @@ Install JDK, Kafka and Zookeeper on your machine.
        
 5. Create Kafka Topic-
       
-      bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic <TopicName>
+       bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic <TopicName>
       
 6. Start Kafka producer-
-      kafka-console-producer.bat --broker-list localhost:9092 --topic test
+
+       kafka-console-producer.bat --broker-list localhost:9092 --topic test
       
 7. Start Kafke consumer-
-      bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:2181 --topic test
+
+       bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:2181 --topic test
