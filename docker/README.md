@@ -44,5 +44,5 @@ Docker registries and can use them for pulling images.
 
 #### Reference:
 
-- [Installing Docker on Ubuntu 16.04](https://github.com/animenon/Tech-FAQs/docker/docker_install.md)
+- [Installing Docker on Ubuntu 16.04](https://github.com/animenon/Tech-FAQs/docker/installation.md)
 - [Docker Container](https://docker-curriculum.com/)
