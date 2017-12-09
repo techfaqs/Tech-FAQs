@@ -54,11 +54,7 @@ Always write a clear log message for your commits and add the Issue Number (if y
 
 * Create a new file or extend an existing one in the regarding technology-folder
 * Use [Markdown](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)  to add the information you think is relevant (eg commands, useful hints...)
-
-### Want to add useful link you found for a technology (eg Cheatsheets, commands ..)
-
-* Add documentation related to a topic by creating a file of the format <technology>.md in [tech-docs](tech-docs).
-* Add reference links in the regarding file in the [tech-docs](tech-docs) folder
+* Add useful link you found for a technology/topic (eg Cheatsheets, commands ..) by creating a file of the format <technology>.md.
 
 ## Styleguides
 
