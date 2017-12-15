@@ -5,4 +5,4 @@ It is a modern programming language developed by Google that uses high-level syn
 
 ----
 
-- [Installation](#installation.md)
+- [Installation](installation.md)
