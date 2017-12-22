@@ -1,4 +1,4 @@
-``` INSERT INTO TABLE table_name SELECT columnlist FROM secondtable; ```
+```INSERT INTO TABLE table_name SELECT columnlist FROM secondtable;```
 
 ``` INSERT INTO TABLE table_name (column_name  data_type) 
            PARTITION (columns_name  data_type) VALUES( value1, value2…); ```
