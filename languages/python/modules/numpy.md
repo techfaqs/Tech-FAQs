@@ -1,15 +1,15 @@
 # NumPy - Numeric Python
 
 
-## Instalation
+## Installation
 
-pip3 install numpy
+    $ pip3 install numpy
 
 ## Basics
 
 #### Import numpy package:
 
-    import numpy as np
+    >>> import numpy as np
     
 #### Create a numpy array:
 
@@ -78,6 +78,12 @@ Lets multiply an array with another, element-wise:
 #### Summerizing data
 
 `mean`, `median`, `mode`, `corrcoef`(to check if two arrays are co-related), `std`(Standard Deviation), `sum`, `sort`, etc.
+           
+Check correlation of arrays,
+
+    >>> np.corrcoef(([1, 2, 3], [0.1, 0.6, 0.5]))
+    array([[ 1.        ,  0.75592895],
+           [ 0.75592895,  1.        ]])
 
 #### Generate Data
 
@@ -100,10 +106,5 @@ If you want to stack two arrays as columns,
     array([[ 1. ,  0.1],
            [ 2. ,  0.2],
            [ 3. ,  0.3]])
-           
-Check correlation of arrays,
 
-    >>> np.corrcoef(([1, 2, 3], [0.1, 0.6, 0.5]))
-    array([[ 1.        ,  0.75592895],
-           [ 0.75592895,  1.        ]])
-           
+
