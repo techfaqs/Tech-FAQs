@@ -19,16 +19,20 @@ The INSERT OVERWRITE syntax replaces the data in a table. Currently, the overwri
 ``` create table t1 ( i int ) partitioned by (x int , y string); ```
 ``` INSERT INTO t1 PARTITION ( x=10, y=’a’ ) SELECT c1 FROM some_other table; ```
 
-All inserted rows will have the same x and y values. This technique of specifiying all the partition key values is known as static           partitioning.*
+All inserted rows will have the same x and y values. This technique of specifiying all the partition key values is known as static           partitioning.
 
 If you want to use Static partition in Hive you should set property 
-     ``` set hive.mapred.mode = strict ``` 
-     This property set by default in hive-site.xml.
+  ``` set hive.mapred.mode = strict ``` 
+  This property set by default in hive-site.xml.
 
 ``` INSERT INTO t1 PARTITION ( x, y=’b’ ) SELECT c1, c2 from some_other_table; ```
+
 All inserted rows will have the same y value.
+
 Any partitioning columns whose value is not specified are filled in from the columns specified last in the SELECT list.
+
 This technique of omitting some partition key values is known as Dynamic Partitioning.
+
 To do dynamic partition, we have to set property  
-     ``` set hive.exec.dynamic.partition.mode = True ```
+  ``` set hive.exec.dynamic.partition.mode = True ```
 
