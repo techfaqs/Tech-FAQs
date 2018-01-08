@@ -2,18 +2,21 @@
 
 1. ```INSERT INTO TABLE table_name SELECT columnlist FROM secondtable;```
 
-2. ```INSERT INTO TABLE table_name (column_name  data_type)
-      PARTITION (columns_name  data_type) VALUES( value1, value2…); ```
-           
-3. ```INSERT OVERWRITE TABLE table_name (column_name  data_type)
+2. ```
+      INSERT INTO TABLE table_name (column_name  data_type)
+      PARTITION (columns_name  data_type) VALUES( value1, value2…);
+   ```
+3. ```
+      INSERT OVERWRITE TABLE table_name (column_name  data_type)
       PARTITION (columns_name  data_type) VALUES( value1, value2…)
-      LIMIT 3; ```
+      LIMIT 3;
+   ```
 
-- The **INSERT INTO** syntax appends data to a table. The existing data files are left as-is, and the inserted data is put 
-  into one or more new data files.
+  - The **INSERT INTO** syntax appends data to a table. The existing data files are left as-is, and the inserted data is put 
+     into one or more new data files.
   
-- The **INSERT OVERWRITE** syntax replaces the data in a table. Currently, the overwritten data files are deleted immediately; 
-  they do not go through the HDFS trash mechanism.
+  - The **INSERT OVERWRITE** syntax replaces the data in a table. Currently, the overwritten data files are deleted immediately; 
+     they do not go through the HDFS trash mechanism.
 
 4. ``` INSERT INTO TABLE table_name SELECT * FROM some_other_table; ```
     
