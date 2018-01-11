@@ -3,6 +3,23 @@
 **logging** module defines functions and classes which implement a flexible event
 logging system for applications and libraries.
 
+---
+
+Simple logger example (save the lines in a `.py` file and run it using `python <file_name>.py`):
+
+       import logging
+       logging.warning('Watch out!')  # will print a message to the console
+       logging.info('I told you so')  # will not print anything
+
+Output:
+
+       WARNING:root:Watch out!
+
+The `INFO` message doesn’t appear because the default level is `WARNING`.
+The printed message includes the indication of the level and the description of the event provided in the logging call.
+
+---
+
 Example of a simple logger, a console handler, and a simple formatter using Python code -
 
 1. Import `logging`:
