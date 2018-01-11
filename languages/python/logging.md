@@ -3,9 +3,7 @@
 **logging** module defines functions and classes which implement a flexible event
 logging system for applications and libraries.
 
----
-
-Simple logger example (save the lines in a `.py` file and run it using `python <file_name>.py`):
+#### Simple logger example (save the lines in a `.py` file and run it using `python <file_name>.py`):
 
        import logging
        logging.warning('Watch out!')  # will print a message to the console
@@ -17,6 +15,37 @@ Output:
 
 The `INFO` message doesn’t appear because the default level is `WARNING`.
 The printed message includes the indication of the level and the description of the event provided in the logging call.
+
+
+### Logging into a File
+
+
+A very common situation is that of recording logging events in a file, example-
+
+       import logging
+       logging.basicConfig(filename='example.log',level=logging.DEBUG)
+       logging.debug('This message should go to the log file')
+       logging.info('So should this')
+       logging.warning('And this, too')
+       
+Output:
+
+       DEBUG:root:This message should go to the log file
+       INFO:root:So should this
+       WARNING:root:And this, too
+       
+This example also shows how you can set the logging level which acts as the threshold for tracking. In this case, because we set the threshold to DEBUG, all of the messages were printed.
+
+#### The logging levels, in increasing order of importance, are:
+
+| LEVEL  | Numerical value <br> *(higher the number higher the priority)* |
+| ------ | ------ |
+| NOTSET |   0    |
+| DEBUG  |  10    |
+| INFO   |  20    |
+| WARN   |  30    |
+| ERROR  |  40    |
+|CRITICAL|  50    |
 
 ---
 
