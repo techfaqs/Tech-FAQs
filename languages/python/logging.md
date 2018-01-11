@@ -3,7 +3,7 @@
 **logging** module defines functions and classes which implement a flexible event
 logging system for applications and libraries.
 
-#### Simple logger example (save the lines in a `.py` file and run it using `python <file_name>.py`):
+**Simple logger example** (save the script in a `.py` file and run it using `python <file_name>.py`):
 
     import logging
     logging.warning('Watch out!')  # will print a message to the console
@@ -99,6 +99,19 @@ Below is the list of attributes can be used to merge data from the record into t
 |thread|%(thread)d|Thread ID (if available).|
 |threadName|%(threadName)s|Thread name (if available).|
 
+> I see three conflicting styles of ***log formatting***, **which to
+> use?**
+> 
+>     import logging
+>     logging = logging.getLogger(__name__)
+>     logger.info("%s went %s wrong", 42, 'very')
+>     logger.info("{} went {} wrong".format(42, 'very'))
+>     logger.info("%s went %s wrong" % (42, 'very'))
+>
+>  The most performant is the first one, as it doesn't precompute the string before use (or logging).
+>  
+>   If you only display `WARN` level and higher, your `DEBUG` messages don’t need to be calculated.
+>   In case of second or third formatting, they would still be generated.
 
 ---
 
