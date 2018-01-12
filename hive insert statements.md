@@ -2,18 +2,18 @@
 
 **Some insert queries.**
 
-```
-INSERT INTO TABLE table_name (column_name  data_type)
-PARTITION (columns_name  data_type) VALUES( value1, value2…);
-```
-> The **INSERT INTO** syntax appends data to a table. The existing data files are left as-is, and the inserted data is put 
+1. ```
+   INSERT INTO TABLE table_name (column_name  data_type)
+   PARTITION (columns_name  data_type) VALUES( value1, value2…);
+   ```
+> The above **INSERT INTO** syntax appends data to a table. The existing data files are left as-is, and the inserted data is put 
   into one or more new data files.
-```
- INSERT OVERWRITE TABLE table_name (column_name  data_type)
- PARTITION (columns_name  data_type) VALUES( value1, value2…)
- LIMIT 3;
-```
-> The **INSERT OVERWRITE** syntax replaces the data in a table. Currently, the overwritten data files are deleted immediately; 
+2. ```
+   INSERT OVERWRITE TABLE table_name (column_name  data_type)
+   PARTITION (columns_name  data_type) VALUES( value1, value2…)
+   LIMIT 3;
+   ```
+> The above **INSERT OVERWRITE** syntax replaces the data in a table. Currently, the overwritten data files are deleted immediately; 
   they do not go through the HDFS trash mechanism.
 
 ### Static partition and Dynamic partition in Hive Insert query:
