@@ -29,7 +29,7 @@ __Static Partition__
 *Example:*    
 *```create table t1 ( i int ) partitioned by (x int , y string);```*
 
-``` __INSERT INTO t1 PARTITION ( x=10, y=’a’ ) SELECT c1 FROM some_other table;__ ```
+```INSERT INTO t1 PARTITION ( x=10, y=’a’ ) SELECT c1 FROM some_other table;```
 
    - All inserted rows will have the same x and y values. This technique of specifiying all the partition key values is known as static      partitioning.
    - If you want to use Static partition in Hive you should set property 
@@ -50,7 +50,7 @@ __Dynamic Partition__
 *Example:*    
 *```create table t1 ( i int ) partitioned by (x int , y string);```*
 
-``` __INSERT INTO t1 PARTITION ( x, y=’b’ ) SELECT c1, c2 from some_other_table;__ ```
+```INSERT INTO t1 PARTITION ( x, y=’b’ ) SELECT c1, c2 from some_other_table;```
 
    - All inserted rows will have the same y value.
    - Any partitioning columns whose value is not specified are filled in from the columns specified last in the SELECT list.
