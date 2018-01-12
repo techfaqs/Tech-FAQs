@@ -1,6 +1,6 @@
-# Hive insert statements
+##  Hive insert statements
 
-**Some insert queries.**
+#### Some insert queries.
 
 1. ```
    INSERT INTO TABLE table_name (column_name  data_type)
@@ -16,7 +16,7 @@
 > The above **INSERT OVERWRITE** syntax replaces the data in a table. Currently, the overwritten data files are deleted immediately; 
   they do not go through the HDFS trash mechanism.
 
-### Static partition and Dynamic partition in Hive Insert query:
+#### Static partition and Dynamic partition in Hive Insert query:
 
 __Static Partition__
 
@@ -32,9 +32,9 @@ __Static Partition__
 ```INSERT INTO t1 PARTITION ( x=10, y=’a’ ) SELECT c1 FROM some_other table;```
 
    - All inserted rows will have the same x and y values. This technique of specifiying all the partition key values is known as static      partitioning.
-   - If you want to use Static partition in Hive you should set property 
-      ``` set hive.mapred.mode = strict ``` 
-          This property set by default in hive-site.xml.
+   - If you want to use Static partition in Hive you should set property. 
+ ``` set hive.mapred.mode = strict ``` 
+     This property set by default in hive-site.xml.
    - Static partition is in Strict Mode.
 
    
