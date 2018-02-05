@@ -1,5 +1,5 @@
 ## Hive Create table commands
-#### Internal tables
+### Internal tables
 
 - Internal Table is tightly coupled in nature.In this type of table, first we have to create table and load the data.
 - We can call this one as data on schema.
@@ -17,7 +17,7 @@ ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ‘,’ ;
 ```
 
-#### External tables
+### External tables
 - External Table is loosely coupled in nature. Data will be available in HDFS.The table is going to create on HDFS data.
 - In other way, we can say like its creating schema on data.
 - At the time of dropping the table it drops only schema, the data will be still available in HDFS as before.
@@ -53,8 +53,8 @@ LINES TERMINATED BY ‘\n’
 STORED AS TEXTFILE;
 ```
 
-#### Create table with (PARTITIONED BY/CLUSTERD BY/TBLPROPERTIES clause):
-Partition by clause:
+### Create table with (PARTITIONED BY/CLUSTERD BY/TBLPROPERTIES clause):
+#### Partition by clause:
 Table partitioning means dividing table data into some parts based on the values of particular columns like date or country, segregate the input records into different files/directories based on date or country.
 Partitioning can be done based on more than column which will impose multi-dimensional structure on directory storage.
 We use PARTITION BY clause to divide the data into some parts.
