@@ -34,12 +34,12 @@ ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ‘,’ 
 LOCATION ‘ /hive/data/weather ‘ ;
 ```
-
 #### Difference between Internal Vs External tables
-Feature	Internal	External
-Schema	Data on Schema	Schema on Data
-Storage Location	/usr/hive/warehouse	HDFS location
-Data availability	Within local file system	Within HDFS
+|Feature|Internal|External|
+|-|-|-|
+|Schema|Data on Schema|Schema on Data|
+|Storage Location|/usr/hive/warehouse|HDFS location|
+|Data Availability|Within local file system|Within HDFS|
 
 #### Create table with IF NOT EXISTS: 
 If you add the option **IF NOT EXISTS**, Hive ignores the statement in case the table already exists.
@@ -52,14 +52,13 @@ FIELDS TERMINATED BY ‘\t’
 LINES TERMINATED BY ‘\n’
 STORED AS TEXTFILE;
 ```
-
 ### Create table with (PARTITIONED BY/CLUSTERD BY/TBLPROPERTIES clause):
 #### Partition by clause:
 Table partitioning means dividing table data into some parts based on the values of particular columns like date or country, segregate the input records into different files/directories based on date or country.
 Partitioning can be done based on more than column which will impose multi-dimensional structure on directory storage.
 We use PARTITION BY clause to divide the data into some parts.
 
-**Advantages**
+__Advantages__
 - Partitioning is used for distributing execution load horizontally.
 - As the data is stored as slices/parts, query response time is faster to process the small part of the data instead of looking for a search in the entire data set.
 - For example, In a large user table where the table is partitioned by country, then selecting users of country ‘IN’ will just scan one directory ‘country=IN’ instead of all the directories.
@@ -93,7 +92,6 @@ ROW FORMAT DELIMITED
 FIELDS TERMINATED BY '1'
 STORED AS SEQUENCEFILE;
 ```
-
 #### Cloning tables (LIKE clause):
 To create an empty table with the same columns, comments, and other attributes as another table, use the following variation. The CREATE TABLE ... LIKE form allows a restricted set of clauses, currently only the LOCATION, COMMENT, and STORED AS clauses.
 Example:
@@ -104,7 +102,6 @@ LIKE {[db_name.] table_name}
 [STORED AS file_format]
 [LOCATION ‘hdfc_path’]
 ```
-
 #### CREATE TABLE AS SELECT:
 The **CREATE TABLE AS SELECT** syntax is a shorthand notation to create a table based on column definitions from another table, and copy data from the source table to the destination table without issuing any separate INSERT statement.
 Example:
