@@ -27,10 +27,10 @@
 	
 	***Better***-
   
-	        import mypkg.sibling
-		from mypkg import sibling
-		from mypkg.sibling import example
-		
+	    import mypkg.sibling
+	    from mypkg import sibling
+	    from mypkg.sibling import example
+	
 	***Acceptable***-
 	
 		from . import sibling
