@@ -26,8 +26,8 @@
  an acceptable alternative.
 	
 	***Better***-
-	
-	 import mypkg.sibling
+  
+	  import mypkg.sibling
 		from mypkg import sibling
 		from mypkg.sibling import example
 		
