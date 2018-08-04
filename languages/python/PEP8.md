@@ -1,8 +1,5 @@
 # PEP8 Style Guide List
 
-### 
-
-
 ### Imports
 
 1. Imports should usually be on separate lines, `from` imports  are an
@@ -26,11 +23,11 @@
  an acceptable alternative.
 	
 	***Better***-
-  
+ 
 	    import mypkg.sibling
 	    from mypkg import sibling
 	    from mypkg.sibling import example
-	
+
 	***Acceptable***-
 	
 		from . import sibling
