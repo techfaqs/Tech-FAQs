@@ -1,22 +1,22 @@
 ##  Hive insert statements
 
-#### Some insert queries.
+#### Types of INSERTs
 
 1. The below **INSERT INTO** syntax appends data to a table. The existing data files are left as-is, and the inserted data is put 
    into one or more new data files.
   Example-
   
-    INSERT INTO TABLE table_name (column_name  data_type)
-     PARTITION (columns_name  data_type)
-     VALUES( value1, value2…);
+       INSERT INTO TABLE table_name (column_name  data_type)
+        PARTITION (columns_name  data_type)
+        VALUES( value1, value2…);
    
 2.  The below **INSERT OVERWRITE** syntax replaces the data in a table. Currently, the overwritten data files are deleted immediately; 
   they do not go through the HDFS trash mechanism.
   Example -
   
-    INSERT OVERWRITE TABLE table_name (column_name  data_type)
-     PARTITION (columns_name  data_type)
-     VALUES( value1, value2…);
+        INSERT OVERWRITE TABLE table_name (column_name  data_type)
+         PARTITION (columns_name  data_type)
+         VALUES( value1, value2…);
    
    
 #### Static partition and Dynamic partition in Hive Insert query:
