@@ -25,8 +25,12 @@
 - At the time of dropping the table it drops only schema, the data will be still available in HDFS as before.
 - External tables provide an option to create multiple schemas for the data stored in HDFS instead of deleting the data every time whenever schema updates
 
+<<<<<<< HEAD
 
 **When to Choose External Table:**
+=======
+**When to Choose External Table?**
+>>>>>>> 7ff64fd... formatting update
 
 - If processing data available in HDFS
 - Useful when the files are being used outside of Hive
