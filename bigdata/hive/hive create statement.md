@@ -25,7 +25,8 @@
 - At the time of dropping the table it drops only schema, the data will be still available in HDFS as before.
 - External tables provide an option to create multiple schemas for the data stored in HDFS instead of deleting the data every time whenever schema updates
 
-**When to Choose External Table?**
+
+**When to Choose External Table:**
 
 - If processing data available in HDFS
 - Useful when the files are being used outside of Hive
@@ -66,6 +67,13 @@ Table partitioning means dividing table data into some parts based on the values
 Partitioning can be done based on more than column which will impose multi-dimensional structure on directory storage.
 We use PARTITION BY clause to divide the data into some parts.
 
+Example:
+
+    CREATE TABLE IF NOT EXISTS employee (eid int, name String, salary String)
+    COMMENT ‘Employee details’
+    PARTITIONED BY (year_of_joining STRING)
+    STORED AS TEXTFILE;
+
 __Advantages__
 
 - Partitioning is used for distributing execution load horizontally.
@@ -77,7 +85,7 @@ __Advantages__
 - Having too many partitions in table creates large number of files and directories in HDFS, which is an overhead to NameNode since it must keep all metadata for the file system in memory only.
 - Partitions may optimize some queries based on Where clauses, but may be less responsive for other important queries on grouping clauses.
 
-**Example Scenarios**
+**Some Scenarios**
 
 - Partitioning is used in real-time log files analysis to segregate the records based on time stamp or date value to see the results day wise quickly.
 - Another real-time use is that, Customer/user details are partitioned by country/state or department for fast retrieval of subset data pertaining to some category.
@@ -108,7 +116,8 @@ Example:
 
 #### Cloning tables (LIKE clause):
 
-To create an empty table with the same columns, comments, and other attributes as another table, use the following variation. The CREATE TABLE ... LIKE form allows a restricted set of clauses, currently only the LOCATION, COMMENT, and STORED AS clauses.
+To create an empty table with the same columns, comments, and other attributes as another table, use the following variation.
+ The CREATE TABLE ... LIKE form allows a restricted set of clauses, currently only the LOCATION, COMMENT, and STORED AS clauses.
 
 Example:
 
@@ -120,8 +129,23 @@ Example:
 
 #### CREATE TABLE AS SELECT:
 
-The **CREATE TABLE AS SELECT** syntax is a shorthand notation to create a table based on column definitions from another table, and copy data from the source table to the destination table without issuing any separate INSERT statement.
+The **CREATE TABLE AS SELECT** syntax is a shorthand notation to create a table based on column definitions from another table,
+ and copy data from the source table to the destination table without issuing any separate INSERT statement.
+
 Example:
 
     CREATE TABLE emp2 AS SELECT * FROM emp1;
 
+#### Other properties
+
+The **TBLPROPERTIES** clause allows you to tag the table definition with your own metadata key/value pairs.
+
+Example:
+
+    CREATE TABLE page_view (viewTime INT, userid BIGINT, page_url STRING)
+    [PARTITIONED BY  (dt STRING, country STRING)
+    [CLUSTERED BY (userid) SORTED BY (viewTime) INTO 32 BUCKETS]
+    [TBLPROPERTIES (‘key1’=’value1’, ‘key2’=’value2’, …)]
+    ROW FORMAT DELIMITED
+    FIELDS TERMINATED BY '1'
+    STORED AS SEQUENCEFILE;
