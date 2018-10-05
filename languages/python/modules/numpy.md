@@ -1,6 +1,5 @@
 # NumPy - Numeric Python
 
-
 ## Installation
 
     $ pip3 install numpy
@@ -18,6 +17,12 @@
     array([1.25, 2.2, 3.5])
     
 NumPy Arrays are quite different from lists, for example:
+
+    [1,2,3] + [1,2,3]
+
+In Python Lists, we would get: `[1,2,3,1,2,3]`
+
+In NumPy Arrays, we would get: `array([2,4,6])`
 
 Indexing is very similar to how its done with Python Lists.
 `list_name[0]` would fetch you the first element.
@@ -37,7 +42,6 @@ Operations over lists don't require you to iterate over the list,
 
     >>> npArray * 2
     array([ 2.5,  4.4,  7. ])
-
 
 #### NumPy Array  Addition:
 
@@ -106,5 +110,3 @@ If you want to stack two arrays as columns,
     array([[ 1. ,  0.1],
            [ 2. ,  0.2],
            [ 3. ,  0.3]])
-
-
