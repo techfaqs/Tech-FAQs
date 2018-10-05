@@ -24,7 +24,6 @@ To run the TensorFlow operations we will use the method `sess.run()`
     # Run the op
     print(sess.run(hello))
 
-
 Output:
 
     b'Hello, World!'
