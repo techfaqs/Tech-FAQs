@@ -23,4 +23,3 @@ REPLACE COLUMNS replaces all existing columns and only changes the table's schem
 
   ```ALTER TABLE invites REPLACE COLUMNS (foo INT COMMENT 'only keep the first column');```
 
-
