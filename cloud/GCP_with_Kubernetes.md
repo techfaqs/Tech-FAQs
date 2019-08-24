@@ -1,4 +1,17 @@
-Google Cloud Platform with Kubernetes
+# Google Cloud Platform with Kubernetes
+
+## Kubernetes on Google Cloud Platform
+
+When you run a Kubernetes Engine cluster, you also gain the benefit of advanced cluster management features
+that Google Cloud Platform provides. These include:
+
+1. Load-balancing for Compute Engine instances.
+2. Node Pools to designate subsets of nodes within a cluster for additional flexibility.
+3. Automatic scaling of your cluster's node instance count.
+4. Automatic upgrades for your cluster's node software.
+5. Node auto-repair to maintain node health and availability.
+6. Logging and Monitoring with Stackdriver for visibility into your cluster.
+
 
 **gcloud** is the command-line tool for Google Cloud Platform.
 
