@@ -17,21 +17,38 @@
     * Renaming (ρ)
       * Give a new schema to a relation.
       * E.g. Shops = ρ<sub>Shops(sname)</sub>(π<sub>rname</sub>Sells)
-  * Binary operators: 
+  * Binary operators:
     * Cross-product (×)
       * Also known as Cartesian product
-      * Returns a combination of attributes inside 2 relations
-      * E.g. Consider 2 relation: R (A, B, C) & S (X, Y)
+      * Returns a combination of attributes inside 2 relations.
+      * E.g. Consider 2 relation: R (A, B, C) & S (X, Y).
         * R × S returns a relation with schema (A, B, C, X, Y)
     * Union (∪)
-      * Returns a relation containing all tuples that occur in R and/or S
-      * E.g. Find all customer and restaurant names
+      * Returns a relation containing all tuples that occur in R and/or S.
+      * E.g. Find all customer and restaurant names.
         * π<sub>rname</sub>(Sells) ∪ π<sub>cname</sub>(Customers)
     * Intersect (∩)
-      * Returns a relation containing all tuples that occur in R and S
-      * E.g. Find all pizzas that contain both cheese and chilli
+      * Returns a relation containing all tuples that occur in R and S.
+      * E.g. Find all pizzas that contain both cheese and chilli.
         * π<sub>pizza</sub>(σ<sub>ingredient = 'cheese'</sub>(Contains)) ∩ π<sub>pizza</sub>(σ<sub>ingredient = 'chilli'</sub>(Contains))
     * Difference (−)
-      * Returns a relation containing all tuples that occur in R but not in S
-      * E.g. Find all pizzas that contain both cheese and chilli
+      * Returns a relation containing all tuples that occur in R but not in S.
+      * E.g. Find all pizzas that contain both cheese and chilli.
         * π<sub>pizza</sub>(σ<sub>ingredient = 'cheese'</sub>(Contains)) - π<sub>pizza</sub>(σ<sub>ingredient = 'chilli'</sub>(Contains))
+* Join algebra operators
+  * Natural Join (⋈)
+    * Acts similar to SQL Natural Join.
+    * Join 2 relations with a common attributes.
+    * E.g. Find all restaurant that sells to some customers in some areas.
+      π<sub>rname, area</sub>(Restaurants) ⋈ π<sub>cname, area</sub>(Customers)
+  * Theta Join (⋈<sub>condition</sub>)
+    * Acts similar to SQL Inner Join
+    * Join 2 relations with any number of specific condition
+    * E.g. Find all restaurant that sells to some customers in the same area.
+      π<sub>rname, area</sub>(Restaurants) ⋈ <sub>Restaurants.area = Customers.area</sub> π<sub>cname, area</sub>(Customers)
+  * Division (÷)
+    * This is not implemented in SQL
+    * Returns tuples with all combinations in S that are present in R.
+    * E.g. Find restaurants that sells all kinds of pizza.
+      π<sub>rname, pizza</sub>(Sells) ÷ π<sub>pizza</sub>(Pizzas)
+  
