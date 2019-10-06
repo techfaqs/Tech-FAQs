@@ -19,6 +19,19 @@
       * E.g. Shops = ρ<sub>Shops(sname)</sub>(π<sub>rname</sub>Sells)
   * Binary operators: 
     * Cross-product (×)
+      * Also known as Cartesian product
+      * Returns a combination of attributes inside 2 relations
+      * E.g. Consider 2 relation: R (A, B, C) & S (X, Y)
+        * R × S returns a relation with schema (A, B, C, X, Y)
     * Union (∪)
+      * Returns a relation containing all tuples that occur in R and/or S
+      * E.g. Find all customer and restaurant names
+        * π<sub>rname</sub>(Sells) ∪ π<sub>cname</sub>(Customers)
     * Intersect (∩)
+      * Returns a relation containing all tuples that occur in R and S
+      * E.g. Find all pizzas that contain both cheese and chilli
+        * π<sub>pizza</sub>(σ<sub>ingredient = 'cheese'</sub>(Contains)) ∩ π<sub>pizza</sub>(σ<sub>ingredient = 'chilli'</sub>(Contains))
     * Difference (−)
+      * Returns a relation containing all tuples that occur in R but not in S
+      * E.g. Find all pizzas that contain both cheese and chilli
+        * π<sub>pizza</sub>(σ<sub>ingredient = 'cheese'</sub>(Contains)) - π<sub>pizza</sub>(σ<sub>ingredient = 'chilli'</sub>(Contains))
