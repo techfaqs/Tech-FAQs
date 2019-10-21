@@ -13,3 +13,12 @@ Types:
 - Prototype
 - Builder
 
+### 7 Structural Patterns
+
+- Adaptor
+- Bridge
+- Composite
+- Fascade
+- Flyweight
+- Proxy
+- Decorator
