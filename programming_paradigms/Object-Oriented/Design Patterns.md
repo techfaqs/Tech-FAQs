@@ -22,3 +22,19 @@ Types:
 - Flyweight
 - Proxy
 - Decorator
+
+### 11 Behavioural Patterns
+
+> Pass a chain of objects until one of them decides to handle it.
+
+- Command
+- Interpreter
+- Iterator
+- Mediator
+- Momento
+- Observer
+- State
+- Stratergy
+- Templete
+- Visitpr
+
