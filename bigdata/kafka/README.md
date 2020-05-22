@@ -25,5 +25,9 @@ Apache Kafka is a distributed streaming platform.
    Or
    
    For Windows, change directory into `bin\windows` and you may execute kafka commands from here.. 
+   
+## Example
+
+For a sample run follow: [Console Example](https://github.com/techfaqs/Tech-FAQs/blob/master/bigdata/kafka/console-example.md)
 
 Reference: [Apache Kafka Intro](https://kafka.apache.org/intro.html)
