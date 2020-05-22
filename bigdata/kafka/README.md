@@ -17,14 +17,20 @@ Apache Kafka is a distributed streaming platform.
 
 1. Download the code from: [here](https://www.apache.org/dyn/closer.cgi?path=/kafka/2.5.0/kafka_2.12-2.5.0.tgz)
 2. Un-tar the downloaded tar and and change directory into it:
+
        > tar -xzf kafka_2.12-2.5.0.tgz
        > cd kafka_2.12-2.5.0
+_(add the kafka directory path as `KAFKA_HOME` or you will have to use the absolute path to use it)_
+
 3. For Linux, change directory into `bin/` and you may execute kafka commands from here.. 
-   (add it to path as `KAFKA_HOME` or you will have to use the absolute path to use it)
    
    Or
    
    For Windows, change directory into `bin\windows` and you may execute kafka commands from here.. 
+   
+4. You will require to setup various configuration of kafka/zookeper in `config` directory (in `KAFKA_HOME` location).
+
+Have a look at [Kafka Quickstart](https://kafka.apache.org/quickstart) for further steps..
    
 ## Example
 
