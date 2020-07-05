@@ -38,6 +38,5 @@ _**&ast;(The port must be whichever each master is configured to use, which is 7
     –hiveconf          – Helps to execute Parameterized Hive Queries(Optional)
     
     
-    Reference:
-    
+Reference:
     [Spark Submit](https://spark.apache.org/docs/latest/submitting-applications.html)
