@@ -208,7 +208,7 @@ df2.head()
 
 
 <div>
-<style scoped>
+<style>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -291,7 +291,7 @@ df3.head()
 
 
 <div>
-<style scoped>
+<style>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -365,7 +365,7 @@ df3.head()
 
 
 <div>
-<style scoped>
+<style>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -502,7 +502,7 @@ type(df_x)
 
 
 
-This is an important step, here we are creating word vectors by doing one hot encoing, and we are only taking 5000 words as the dictionary.
+This is an important step, here we are creating word vectors by doing one hot encoding, and we are only taking 5000 words as the dictionary.
 
 
 ```python
