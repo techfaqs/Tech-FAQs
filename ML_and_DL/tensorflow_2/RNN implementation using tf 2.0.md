@@ -208,7 +208,7 @@ df2.head()
 
 
 <div>
-<style>
+  <style>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -220,7 +220,7 @@ df2.head()
     .dataframe thead th {
         text-align: right;
     }
-</style>
+  </style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -291,7 +291,7 @@ df3.head()
 
 
 <div>
-<style>
+  <style>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -303,7 +303,7 @@ df3.head()
     .dataframe thead th {
         text-align: right;
     }
-</style>
+  </style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -365,7 +365,7 @@ df3.head()
 
 
 <div>
-<style>
+  <style>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -377,7 +377,9 @@ df3.head()
     .dataframe thead th {
         text-align: right;
     }
-</style>
+  </style>
+<br>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
