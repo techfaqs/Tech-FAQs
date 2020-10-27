@@ -19,4 +19,4 @@ Consensus is the process of keeping the ledger transactions synchronized across 
 
 **So, the blockchain is a shared, replicated transaction system which is updated via smart contracts and kept consistently synchronized through a collaborative process called consensus.**
 
-Reference- Bitcoin and Cryptocurrency Technologies book- https://bitcoinbook.cs.princeton.edu
+Reference- [Bitcoin and Cryptocurrency Technologies book](https://bitcoinbook.cs.princeton.edu)
