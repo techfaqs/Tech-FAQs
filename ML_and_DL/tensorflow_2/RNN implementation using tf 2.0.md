@@ -1,8 +1,10 @@
+# An example in Tensorflow 2.0
+
 <br>
 <center><img src="https://i.imgur.com/KXbnThQ.png" width="500px"></center>
 <br>
 
-**Hi** reader, this is a small and simple guide to RNNs, I will discuss all the basic requirements that you need to get started with RNNs from underneath concepts to code implementation. We will be implementing using TensorFlow 2.0.
+**Hi** reader, this is a small and simple guide to RNNs, we will discuss all the basic requirements that you will need to get started with RNNs from underneath concepts to code implementation. We will be implementing using TensorFlow 2.0.
 
 <br>
 
@@ -20,31 +22,36 @@
 11. **Conclusion**
 <br>
 
-### What is RNNs?
+### What are RNNs?
+
 The R in RNN stands for recurrent which literally means repeating. Now you will think what is repeating here? Here repeating refers to the repeating structure of RNNs. There are different kinds of data available, like normal tabular data with different features, image data,time-series data, text data, etc. From the time series, data and text data are the data which has a sequence in it. Let me discuss the meaning of sequence for text data. It's very noticeable that every sentence has a sequence of words, and if you change the sequence of that sentence then the sentence won't have the same meaning. Because of this reason, we can't use MLPs on text data (there are other reasons too like large parameter size,size of i/p word and o/p word can be different, etc.).
 Now, an RNN has many structures as per the problem requirements like- one to one, one to many, many to one, many to many as fig 1.
 
-<br>
-<center><img src="https://i.imgur.com/AtbnrWR.jpg" width="500px"></center>
-<br>
-<center><h3>Fig: 1</h3></center>
-<br>
+
+![RNN structure](https://i.imgur.com/AtbnrWR.jpg)
+
+#### Fig: 1
+
+
 But, here I will be discussing many to one network. But, keep in mind that a single RNN cell is the same everywhere, just they are placed in different ways to satisfy the problem requirements.
 
 ###  Many to One RNN: 
 The structure of many to many looks like fig2.The application of many to one network is spam detection, sentiment analysis, etc. Now let's dive deep and understand the bare bones of RNN.
 
-<center><img src="https://i.imgur.com/Zz5bcjX.png" width="600px"></center>
-<center><h3>Fig: 2</h3></center>
+![Many to One](https://i.imgur.com/Zz5bcjX.png)
+#### Fig: 2
 
-Every vertical block with input and output arrows is called a RNN cell, at the beginning, it uses a vector with zeros which are named here as $O_0$, this is only for showing the repeating structure of RNN. the circles in the blocks are activation functions. And if you check out carefully, you will observe that there are three types of weights.$W$ which are with input word vector, $W'$ is with RNN cell o/p and finally $W''$ is at the final RNN cell which helps to make the prediction.O/p of RNN cells are taken as an i/p for the next RNN cell, this is to keep the sequence information preserved. Now, $O_i$ is,
+Every vertical block with input and output arrows is called a RNN cell. In the beginning, it uses a vector with zeros which are named here as <strong>O<sub>0</sub></strong>, this is only for showing the repeating structure of RNN. the circles in the blocks are activation functions. And if you check out carefully, you will observe that there are three types of weights.W which are with input word vector, <strong>W'</strong> is with RNN cell o/p and finally <strong>W''</strong> is at the final RNN cell which helps to make the prediction.O/p of RNN cells are taken as an i/p for the next RNN cell, this is to keep the sequence information preserved. 
 
-> \begin{equation}
- O_i = f(X_iW+O_iW')
- \end{equation}
+Now, <strong>O<sub>i</sub></strong> is,
 
-And at the end, the output of the last RNN cell and the $W''$ are taken and passed through an activation function(here sigmoid is taken) to generate the prediction, $Y' = S(O_nW'')$. And rest of the things are taken care of by backpropagation and gradient descent stuff, normal model training.
-<br>
+
+<strong>O<sub>i</sub> = f(X<sub>i</sub> W+O<sub>i</sub> W')</strong>
+
+
+And at the end, the output of the last RNN cell and the <strong>W''</strong> are taken and passed through an activation function(here sigmoid is taken) to generate the prediction, <strong>Y' = S(O<sub>n</sub> W'')</strong>. And rest of the things are taken care of by backpropagation and gradient descent stuff, normal model training.
+
+
 > Note, description of all symbols are given in the image itself.
 
 ## Utils
@@ -78,6 +85,7 @@ from tensorflow.keras.layers import Dense
 
 ## Loading Data Using Pandas:
 
+We are going to use Food reviews data for for this example,
 
 ```python
 import pandas as pd
@@ -88,10 +96,9 @@ df = pd.read_csv('../input/amazon-fine-food-reviews/Reviews.csv')
 
 
 
-
-
 ### Some Basic Exploratory Data Analysis:
 
+### Info:
 
 ```python
 df.info()
@@ -116,25 +123,19 @@ df.info()
     memory usage: 43.4+ MB
     
 
-
+### Shape:
 ```python
 df.shape
 ```
-
-
-
 
     (568454, 10)
 
 
 
-
+### Check if there is any nan values
 ```python
 df.isna().sum()
 ```
-
-
-
 
     Id                         0
     ProductId                  0
@@ -150,20 +151,9 @@ df.isna().sum()
 
 
 
-
+### Remove 3 star reviews:
 ```python
 df1 = df[df['Score']!=3]
-```
-
-
-
-
-
-
-
-
-
-```python
 df1.shape
 ```
 
@@ -204,60 +194,13 @@ df2 = pd.concat([text_df,score_df],axis=1)
 df2.head()
 ```
 
-
-
-
-<div>
-  <style>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-  </style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>text</th>
-      <th>score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>I have bought several of the Vitality canned d...</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Product arrived labeled as Jumbo Salted Peanut...</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>This is a confection that has been around a fe...</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>If you are looking for the secret ingredient i...</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Great taffy at a great price.  There was a wid...</td>
-      <td>5</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | text | score |
+| ----------- | ----------- |----------- |
+|0|I have bought several of the Vitality canned d...|5|
+|1|Product arrived labeled as Jumbo Salted Peanut...	|1|
+|2|This is a confection that has been around a fe...|4|
+|3|If you are looking for the secret ingredient i...|2|
+|4|Great taffy at a great price. There was a wid...|5|
 
 
 
@@ -270,6 +213,8 @@ for i in range(500,505):
     print('-----------------------------------------------------')
 ```
 
+### Output:
+
     ...you can absolutely forget about these. Confirmed by other reviewers, these chips are now total garbage. Like chewing on styrofoam packaging "peanuts". Positively awful, no hyperbole or exaggeration. I'll NEVER buy anything from Kettle brand ever again! From a reportedly once great "premium" brand, literally any mass market chip I've ever tried tastes better than these. Stale and rancid tasting, and virtually no salty taste whatsoever. Completely awful!
     -----------------------------------------------------
     These chips are nasty.  I thought someone had spilled a drink in the bag, no the chips were just soaked with grease.  Nasty!!
@@ -280,70 +225,23 @@ for i in range(500,505):
     -----------------------------------------------------
     They are good but wish they were also baked. Have not found baked no salt potato chips anywhere. If there are any I wish someone would post.
     -----------------------------------------------------
-    
+
+
+### Reduce dataframe to a first 50,000 rows and print head:
 
 ```python
 df3 = df2.head(50000)
 df3.head()
 ```
 
+|  | text | score |
+| ----------- | ----------- |----------- |
+|0|I have bought several of the Vitality canned d...|5|
+|1|Product arrived labeled as Jumbo Salted Peanut...	|1|
+|2|This is a confection that has been around a fe...|4|
+|3|If you are looking for the secret ingredient i...|2|
+|4|Great taffy at a great price. There was a wid...|5|
 
-
-
-<div>
-  <style>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-  </style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>text</th>
-      <th>score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>I have bought several of the Vitality canned d...</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Product arrived labeled as Jumbo Salted Peanut...</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>This is a confection that has been around a fe...</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>If you are looking for the secret ingredient i...</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Great taffy at a great price.  There was a wid...</td>
-      <td>5</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-<br>
 
 Here we have created a function which will mark the score from 1 to 3 as negative and 4 to 5 as positive. A we are going to do binary classification that's why we are keeping the labels to positive and negative.
 
@@ -362,61 +260,14 @@ df3.head()
 ```
 
 
+|  | text | score |
+| ----------- | ----------- |----------- |
+|0|I have bought several of the Vitality canned d...|positive|
+|1|Product arrived labeled as Jumbo Salted Peanut...	|negative|
+|2|This is a confection that has been around a fe...|positive|
+|3|If you are looking for the secret ingredient i...|negative|
+|4|Great taffy at a great price. There was a wid...|positive|
 
-
-<div>
-  <style>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-  </style>
-<br>
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>text</th>
-      <th>score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>I have bought several of the Vitality canned d...</td>
-      <td>positive</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Product arrived labeled as Jumbo Salted Peanut...</td>
-      <td>negative</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>This is a confection that has been around a fe...</td>
-      <td>positive</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>If you are looking for the secret ingredient i...</td>
-      <td>negative</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Great taffy at a great price.  There was a wid...</td>
-      <td>positive</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 
 
@@ -424,9 +275,6 @@ df3.head()
 ```python
 df3.isna().sum()
 ```
-
-
-
 
     text     0
     score    0
@@ -447,9 +295,6 @@ df_y = df3['score']
 stop_words = set(stopwords.words('english'))
 len(stop_words) #finding stop words
 ```
-
-
-
 
     179
 
@@ -480,9 +325,6 @@ for i in range(0, len(df3)):
 corpus[1]
 ```
 
-
-
-
     'product arriv label jumbo salt peanut peanut actual small size unsalt sure error vendor intend repres product jumbo'
 
 
@@ -497,9 +339,6 @@ df_x = corpus
 type(df_x)
 ```
 
-
-
-
     list
 
 
@@ -512,10 +351,6 @@ voc_size=5000
 onehot_repr=[one_hot(words,voc_size)for words in corpus] 
 type(onehot_repr)
 ```
-
-
-
-
     list
 
 
@@ -590,11 +425,7 @@ df_y2 = encode.fit_transform(df_y)
 type(df_y2)
 ```
 
-
-
-
     numpy.ndarray
-
 
 
 This is a important part, where we car converting our data to nd arrays as we cant just input a pandas data frame.
@@ -620,6 +451,8 @@ X_train, X_test, Y_train, Y_test = train_test_split(X_final, y_final, test_size=
 model.fit(X_train,Y_train,validation_data=(X_test,Y_test),epochs=10,batch_size=64)
 ```
 
+### Output:
+
     Epoch 1/10
     625/625 [==============================] - 78s 125ms/step - loss: 0.3643 - accuracy: 0.8591 - val_loss: 0.2562 - val_accuracy: 0.8989
     Epoch 2/10
@@ -641,10 +474,6 @@ model.fit(X_train,Y_train,validation_data=(X_test,Y_test),epochs=10,batch_size=6
     Epoch 10/10
     625/625 [==============================] - 76s 122ms/step - loss: 0.2995 - accuracy: 0.8789 - val_loss: 0.2991 - val_accuracy: 0.8777
     
-
-
-
-
     <tensorflow.python.keras.callbacks.History at 0x7f3a10485050>
 
 
@@ -660,15 +489,11 @@ from sklearn.metrics import accuracy_score
 accuracy_score(Y_test,y_pred_rnn)
 ```
 
-
-
-
     0.8777
 
 
 
 ### Conclusion:
+
 Our model is giving nera 90% accurecy which is very good.
 This is how you train a RNN using tensorflow 2.0
-
-Thank you for reading.
