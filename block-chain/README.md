@@ -1,24 +1,28 @@
-# Block chain
+#### Blockchain
 
-A blockchain is a continuously growing list of records
-(called blocks) which are linked and secured using cryptography
+A block-chain is a distributed database of records or public ledger of all transactions or digital events that have been executed and shared among participating parties.
+Each transaction in the public ledger is verified by consensus of a majority of the participants in the system.
+The distributed ledger securely records all the transactions that take place on the network and is often described as decentralized because it is replicated across many network participants, each of whom collaborate in its maintenance. Once the information is entered it can never be erased.
 
-Each block typically contains a hash pointer as a link to a previous block,
-a timestamp and transaction data.
-By design, blockchains are inherently resistant to modification of the data.
+The records also known as **blocks** are linked and secured using cryptography and each block contains a hash pointer as a link to a previous block, a timestamp and the transaction data. The block chain provides Bitcoin’s public ledger, an ordered and timestamped record of transactions. This system is used to protect against double spending and modification of previous transaction records.
 
-A blockchain can serve as
-"__an open, distributed ledger that can record transactions between
-two parties efficiently and in a verifiable and permanent way.__"
+It serves as **an open, distributed ledger that can record transactions between two parties efficiently and in a verifiable and permanent way.**
 
-![Image of BlockChain](https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Blockchain.svg/226px-Blockchain.svg.png)
+It enables a distributed consensus where each and every online transaction, past and present, involving digital assets can be verified at any time in the future. It does this without compromising the privacy of the digital assets and parties involved.
+The distributed consensus and anonymity are two important characteristics of blockchain technology.
+![Consensus image](https://hyperledger-fabric.readthedocs.io/en/release-2.2/_images/consensus.png)
 
+One key emerging use case of blockchain technology involves **smart contracts**. Smart contracts are basically computer programs that can automatically execute the terms of a contract. When a pre-configured condition in a smart contract among participating entities is met then the parties involved in a contractual agreement can be automatically made payments as per the contract in a transparent manner.
 
+To support the consistent update of information and to enable a whole host of ledger functions (transacting, querying, etc) the block-chain network uses smart contracts to provide controlled access to the distributed ledger.
 
-The block chain provides Bitcoin’s public ledger, an ordered and
-timestamped record of transactions. This system is used to protect
-against double spending and modification of previous transaction records.
+For example, a smart contract can be written to stipulate the cost of shipping an item where the shipping charge changes depending on how quickly the item arrives. Both the parties agrees to the terms written to the ledger, the appropriate funds change hands automatically when the item is received.
+![Smart_contract image](https://hyperledger-fabric.readthedocs.io/en/release-2.2/_images/Smart_Contract.png)
 
-![BlockChain Overview](https://bitcoin.org/img/dev/en-blockchain-overview.svg)
+Consensus is the process of keeping the ledger transactions synchronized across the network. It ensures that ledgers update only when transactions are approved by the appropriate participants, and that when ledgers do update, they update with the same transactions in the same order.
 
-Reference: [BitCoin Dev Guide](https://bitcoin.org/en/developer-guide)
+**So, the blockchain is a shared, replicated transaction system which is updated via smart contracts and kept consistently synchronized through a collaborative process called consensus.**
+
+**References**
+- [Bitcoin and Cryptocurrency Technologies book](https://bitcoinbook.cs.princeton.edu)
+- [BitCoin Developer Guide](https://bitcoin.org/en/developer-guide)
