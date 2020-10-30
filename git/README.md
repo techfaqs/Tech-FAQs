@@ -1,8 +1,13 @@
 # GIT
 
-Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
 
- Git is easy to learn and has a tiny footprint with lightning fast performance. It outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching, convenient staging areas, and multiple workflows. 
+Git is a free and open source distributed version control system designed to handle everything from small to
+ very large projects with speed and efficiency.
+
+Git is easy to learn and has a tiny footprint with lightning fast performance.
+It outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching,
+ convenient staging areas, and multiple workflows. 
+
 
 -  [Why use GIT?](https://github.com/techfaqs/Tech-FAQs/blob/master/git/git_why_use.md)
 
@@ -24,7 +29,7 @@ You typically obtain a Git repository in one of two ways:
 In either case, you end up with a Git repository on your local machine, ready for work.
 
 
-**git references:**
+## git References:
 
 1. [GIT as Version Control System](http://www.makeuseof.com/tag/git-version-control-youre-developer/)
 2. [GIT emoji cheatsheet](http://www.emoji-cheat-sheet.com/)
